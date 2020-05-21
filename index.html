@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>メモ・リファラ用</title>
+    </head>
+    <body>
+        <ul id="ulprint">
+        </ul>
+        <textarea id="textarea" style="display: none;">
+シャクティパット事件,https://www.courts.go.jp/app/hanrei_jp/detail2?id=50057
+国鉄・公務と業務,https://www.courts.go.jp/app/files/hanrei_jp/255/050255_hanrei.pdf
+月刊ペン,https://www.courts.go.jp/app/files/hanrei_jp/844/051844_hanrei.pdf
+和歌山の名誉棄損,https://www.courts.go.jp/app/files/hanrei_jp/801/050801_hanrei.pdf
+
+住居侵入の瑕疵ある意思,https://www.courts.go.jp/app/files/hanrei_jp/276/055276_hanrei.pdf
+偽計による警察職務の妨害と偽計業務妨害罪の成否,http://www.ritsumei.ac.jp/acd/cg/law/lex/hosei-10/okada.pdf
+警察への虚構犯罪通報は偽計業務妨害か？,http://www.ritsumei.ac.jp/acd/cg/law/lex/11-3/ikuta.pdf
+リーガルテックと弁護士法に関する考察,https://www.jstage.jst.go.jp/article/inlaw/18/0/18_180001/_pdf/-char/ja
+        </textarea>
+        <script>
+            window.addEventListener("DOMContentLoaded",function(){
+
+                var ulprint = document.getElementById("ulprint");
+                var data = document.getElementById("textarea").value.split("\n");
+
+                for(var i=0;i<data.length;++i){
+                    var tmp = data[i].split(",");
+                    if(tmp.length>=2){
+                        var li = document.createElement("li");
+                        var a = document.createElement("a");
+                        a.textContent = tmp[0];
+                        a.href = tmp[1];
+                        li.append(a);
+                        ulprint.appendChild(li);
+                    } else {
+                        ulprint.appendChild(document.createElement("hr"));
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
+
+
+
